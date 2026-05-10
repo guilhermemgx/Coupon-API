@@ -1,16 +1,11 @@
 package br.com.couponapi.domain;
 
-import jakarta.persistence.Embeddable;
 import lombok.Getter;
 
 @Getter
-@Embeddable
 public class CouponCode {
 
     private String value;
-
-    protected CouponCode() {
-    }
 
     public CouponCode(String rawCode) {
         if (rawCode == null || rawCode.isBlank()) {

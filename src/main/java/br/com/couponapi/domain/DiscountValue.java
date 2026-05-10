@@ -1,18 +1,13 @@
 package br.com.couponapi.domain;
 
-import jakarta.persistence.Embeddable;
 import lombok.Getter;
 
 import java.math.BigDecimal;
 
 @Getter
-@Embeddable
 public class DiscountValue {
 
     private BigDecimal value;
-
-    protected DiscountValue() {
-    }
 
     public DiscountValue(BigDecimal value) {
         if (value == null) {

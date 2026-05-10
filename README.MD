@@ -4,6 +4,22 @@ API REST em Java com Spring Boot para cadastro e exclusao logica de cupons.
 
 O projeto foi desenvolvido para um desafio tecnico e concentra as regras principais no dominio, deixando controller e service mais focados em entrada, saida e persistencia.
 
+## Arquitetura
+
+O dominio foi separado da persistencia:
+
+- `domain`: objetos de dominio puros, sem anotacoes JPA.
+- `repository`: contrato usado pela aplicacao para salvar e consultar cupons.
+- `repository.jpa`: implementacao com Spring Data JPA, entidade de banco e mapper.
+
+As regras de negocio ficam em:
+
+- `Coupon`
+- `CouponCode`
+- `DiscountValue`
+
+A entidade JPA `CouponEntity` existe apenas para persistencia.
+
 ## Tecnologias
 
 - Java 21
